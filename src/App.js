@@ -1,17 +1,22 @@
-import React, {useEffect, useState} from 'react';
-import API from './util';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import About from './Pages/About';
+import Home from './Pages/Home';
+import Error from './Pages/Error';
 
 function App() {
-  const [articles, setArticles] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${API}`).then(response => response.json()).then(data => console.log(data))
-  })
   return (
-    <div className="App">
-    <h1>Something is happening</h1>
-    </div>
+    <Router>
+      <Navigation />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path='/about' component={About} />
+        <Route component={Error} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
