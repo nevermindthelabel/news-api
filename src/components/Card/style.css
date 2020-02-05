@@ -5,4 +5,7 @@
 
 .card:hover {
   box-shadow: 0px 8px 10px gray, -10px 8px 15px gray, 10px 8px 15px gray;
+  -moz-box-shadow: 0px 8px 10px gray;
+  -webkit-box-shadow: 0px 8px 10px gray;
+  -o-box-shadow: 0px 8px 10px gray;
 }
