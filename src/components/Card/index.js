@@ -1,3 +1,4 @@
+require('dotenv').config();
 import React, { Fragment, useState, useEffect } from 'react';
 import {
   Card, CardImg, CardText, CardBody,
