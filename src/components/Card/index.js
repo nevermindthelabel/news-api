@@ -5,7 +5,7 @@ import {
   CardTitle, CardSubtitle, Spinner
 } from 'reactstrap';
 import axios from 'axios';
-import API from process.env.REACT_APP_API;
+const API = process.env.REACT_APP_API;
 import './style.css';
 
 const Cards = () => {
