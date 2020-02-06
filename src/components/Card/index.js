@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 import React, { Fragment, useState, useEffect } from 'react';
 import {
   Card, CardImg, CardText, CardBody,
@@ -7,6 +7,7 @@ import {
 import axios from 'axios';
 import './style.css';
 
+require('dotenv').config();
 const API = process.env.REACT_APP_API;
 
 const Cards = () => {
