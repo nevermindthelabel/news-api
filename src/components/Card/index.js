@@ -5,8 +5,9 @@ import {
   CardTitle, CardSubtitle, Spinner
 } from 'reactstrap';
 import axios from 'axios';
-const API = process.env.REACT_APP_API;
 import './style.css';
+
+const API = process.env.REACT_APP_API;
 
 const Cards = () => {
   const [articles, setArticles] = useState([]);
