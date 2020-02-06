@@ -12,7 +12,7 @@ const About = () => {
       <Row>
         <Col>
           <p>This project was created with Create React App and the News API. Currently, it pulls in the top news stories from the US and displays them on the home page, taking advantage of the News API's robust API. </p>
-          <p>Future planned updates include creating a seperate search page where someone can search for news on a particular topic, or news by country. The News API allows you to parse the data by topic, country, or search timeframe.</p>
+          <p>Future planned updates include creating a seperate search page where someone can search for news on a particular topic, or news by country. The News API allows you to filter the data by topic, country, or search timeframe.</p>
         </Col>
       </Row>
     </Container>
