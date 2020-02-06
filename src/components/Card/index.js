@@ -1,20 +1,17 @@
-
 import React, { Fragment, useState, useEffect } from 'react';
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Spinner
 } from 'reactstrap';
 import axios from 'axios';
+import API from '../../util';
 import './style.css';
-
-require('dotenv').config();
-const API = process.env.REACT_APP_API;
 
 const Cards = () => {
   const [articles, setArticles] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`).then(data => {
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=7a915ef2180a43f2844db9159852e4ec`).then(data => {
       setArticles(data.data.articles); setIsLoaded(true)
     })
   })
