@@ -11,7 +11,7 @@ const Cards = () => {
   const [articles, setArticles] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=7a915ef2180a43f2844db9159852e4ec`).then(data => {
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API}`).then(data => {
       setArticles(data.data.articles); setIsLoaded(true)
     })
   })
