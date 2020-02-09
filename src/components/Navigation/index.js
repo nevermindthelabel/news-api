@@ -24,6 +24,9 @@ const Navigation = (props) => {
             <NavItem>
               <NavLink href="/about/">About</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink href="/search">Search</NavLink>
+            </NavItem>
             </Nav>
         </Collapse>
       </Navbar>
