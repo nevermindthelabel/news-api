@@ -1,5 +1,4 @@
 import React from 'react';
-// import image from '../../images/heroimage.jpg';
 import './style.css';
 
 const HeroImage = (props) => {
