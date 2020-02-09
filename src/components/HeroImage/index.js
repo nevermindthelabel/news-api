@@ -7,7 +7,7 @@ const HeroImage = () => {
     <div className="container-fluid">
       <div className="row">
         <header>
-          <img src={image} alt="" />
+          <img src={image} alt="Hero Image" />
         </header>
       </div>
     </div>
