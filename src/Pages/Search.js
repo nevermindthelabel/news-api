@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import Form from '../components/Form';
 import API from '../util';
 import axios from 'axios';
-import Spinner from '../components/Spinner';
 import Card from '../components/Card';
 import HeroImage from '../components/HeroImage';
 import Image from '../images/banner.png';
@@ -16,7 +15,7 @@ const Search = () => {
     e.preventDefault();
     if (!searchTerm) return;
     setSearchTerm('');
-    axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${searchTerm}&apiKey=${API}`).then(data => setArticles(data.data.articles)); setSearchTerm('');
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=${searchTerm}&apiKey=${API}`).then(data => setArticles(data.data.articles));
   }
 
   const handleChange = e => {
