@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import HeroImage from '../components/HeroImage';
+import Spinner from '../components/Spinner';
 import Cards from '../components/Card';
+import Image from '../images/heroimage.jpg'
 import axios from 'axios';
 import API from '../util';
 
 const Home = () => {
-
   const [articles, setArticles] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -17,14 +18,14 @@ const Home = () => {
 
   return (
     <>
-      <HeroImage />
+      <HeroImage image={Image}/>
       <Container className='main'>
         <Row>
           <Col>
             <h1>Top News</h1>
           </Col>
         </Row>
-        <Row>{!isLoaded ? <div className='loader'></div> : articles.map((article, index) => (
+        <Row>{!isLoaded ? <Spinner /> : articles.map((article, index) => (
           <Cards key={index} article={article} />
         ))
         }
