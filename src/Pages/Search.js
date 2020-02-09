@@ -11,7 +11,6 @@ import Image from '../images/banner.png';
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState();
   const [articles, setArticles] = useState([]);
-  // const [isLoaded, setIsLoaded] = useState(false);
 
   const handleSubmit = e => {
     e.preventDefault();
