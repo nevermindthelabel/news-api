@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import Form from '../components/Form';
 import API from '../util';
