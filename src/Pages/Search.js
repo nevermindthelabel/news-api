@@ -32,7 +32,7 @@ const Search = () => {
 
   return (
     <>
-      <HeroImage image={Image} />
+      <HeroImage image={Image} title={'Search'}/>
       <Container className='main'>
         <Row>
           <Col>
