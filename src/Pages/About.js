@@ -6,7 +6,7 @@ import Image from '../images/banner.png';
 const About = () => {
   return (
     <>
-      <HeroImage image={Image} />
+      <HeroImage image={Image} title={'About'} />
       <Container className='main'>
         <Row>
           <Col>
