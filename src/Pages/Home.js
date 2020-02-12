@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <>
-      <HeroImage image={Image}/>
+      <HeroImage image={Image} title={'News API'} />
       <Container className='main'>
         <Row>
           <Col>
