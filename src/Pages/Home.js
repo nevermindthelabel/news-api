@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import HeroImage from '../components/HeroImage';
 import Spinner from '../components/Spinner';
 import Cards from '../components/Card';
+import Wrapper from '../components/Wrapper';
 import Image from '../images/heroimage.jpg'
 import axios from 'axios';
 import API from '../util';
@@ -25,10 +26,13 @@ const Home = () => {
             <h1>Top News</h1>
           </Col>
         </Row>
-        <Row>{!isLoaded ? <Spinner /> : articles.map((article, index) => (
+        <Row>
+          <Wrapper>
+          {!isLoaded ? <Spinner /> : articles.map((article, index) => (
           <Cards key={index} article={article} />
         ))
         }
+          </Wrapper>
         </Row>
       </Container>
     </>
