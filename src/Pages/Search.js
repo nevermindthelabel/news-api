@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Label } from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import Form from '../components/Form';
 import API from '../util';
 import axios from 'axios';
@@ -40,35 +42,36 @@ const Search = () => {
         <Row className="search-intro">
           <Col md="4">
             <p>Here you can search by country and topic.</p>
-            <ul>
-              {countriesToSearchFrom.map(country => (<li>{country}</li>))}
+            <p>Available countries include:</p>
+            <ul className="fa-ul">
+              {countriesToSearchFrom.map(country => (<li><FontAwesomeIcon icon={faGlobeAmericas} style={{ marginRight: '.4em' }} />{country}</li>))}
             </ul>
-            </Col>
-            <Col md="4">
-              <Form handleSubmit={handleSubmit} handleChange={handleChange} />
-            </Col>
-            <Col md="4">
-              <Label>Select Country</Label>
-              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle caret >
-                  Country
+          </Col>
+          <Col md="4">
+            <Form handleSubmit={handleSubmit} handleChange={handleChange} />
+          </Col>
+          <Col md="4">
+            <Label>Select Country</Label>
+            <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+              <DropdownToggle caret >
+                Country
         </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={handleDropdownClick} value={'ae'}>United Arab Emirates</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'au'}>Australia</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'ca'}>Canada</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'cn'}>Chinac</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'de'}>Germany</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'fr'}>France</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'gb'}>Great Britain</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'hk'}>Hong Kong</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'in'}>India</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'il'}>Israel</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'jp'}>Japan</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'mx'}>Mexico</DropdownItem>
-                  <DropdownItem onClick={handleDropdownClick} value={'us'}>United States</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
+              <DropdownMenu>
+                <DropdownItem onClick={handleDropdownClick} value={'ae'}>United Arab Emirates</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'au'}>Australia</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'ca'}>Canada</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'cn'}>Chinac</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'de'}>Germany</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'fr'}>France</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'gb'}>Great Britain</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'hk'}>Hong Kong</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'in'}>India</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'il'}>Israel</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'jp'}>Japan</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'mx'}>Mexico</DropdownItem>
+                <DropdownItem onClick={handleDropdownClick} value={'us'}>United States</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
           </Col>
         </Row>
         <Row>
