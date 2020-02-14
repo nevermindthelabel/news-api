@@ -26,6 +26,10 @@ code {
   -o-box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
 }
 
+.search-intro {
+  margin-top: 4em;
+}
+
 .loader {
   margin: 4em auto;
   border: 16px solid #f3f3f3; /* Light grey */
