@@ -5,6 +5,7 @@ import API from '../util';
 import axios from 'axios';
 import Card from '../components/Card';
 import HeroImage from '../components/HeroImage';
+import Wrapper from '../components/Wrapper';
 import Image from '../images/banner.png';
 
 const Search = () => {
@@ -68,8 +69,10 @@ const Search = () => {
           </Col>
         </Row>
         <Row>
+          <Wrapper>
           {articles.map((article, index) =>
             <Card key={index} article={article} />)}
+          </Wrapper>
         </Row>
       </Container>
     </>
