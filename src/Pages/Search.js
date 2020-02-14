@@ -31,47 +31,50 @@ const Search = () => {
     setDropdownValue(e.target.value)
   }
 
+  const countriesToSearchFrom = ['United Arab Emirates', 'Australia', 'Canada', 'China', 'China', 'Germany', 'France', 'Great Britain', 'Hong Kong', 'India', 'Israel', 'Japan', 'Mexico', 'United States'];
+
   return (
     <>
-      <HeroImage image={Image} title={'Search'}/>
+      <HeroImage image={Image} title={'Search'} />
       <Container className='main'>
-        <Row>
-          <Col>
-            <h1>Search</h1>
-          </Col>
-        </Row>
-        <Row>
-          <Col md="6">
-            <Form handleSubmit={handleSubmit} handleChange={handleChange} />
-          </Col>
-          <Col md="6">
-            <Label>Select Country</Label>
-            <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-              <DropdownToggle caret >
-                Country
+        <Row className="search-intro">
+          <Col md="4">
+            <p>Here you can search by country and topic.</p>
+            <ul>
+              {countriesToSearchFrom.map(country => (<li>{country}</li>))}
+            </ul>
+            </Col>
+            <Col md="4">
+              <Form handleSubmit={handleSubmit} handleChange={handleChange} />
+            </Col>
+            <Col md="4">
+              <Label>Select Country</Label>
+              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                <DropdownToggle caret >
+                  Country
         </DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={handleDropdownClick} value={'ae'}>United Arab Emirates</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'au'}>Australia</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'ca'}>Canada</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'cn'}>China</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'de'}>Germany</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'fr'}>France</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'gb'}>Great Britain</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'hk'}>Hong Kong</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'in'}>India</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'il'}>Israel</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'jp'}>Japan</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'mx'}>Mexico</DropdownItem>
-                <DropdownItem onClick={handleDropdownClick} value={'us'}>United States</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+                <DropdownMenu>
+                  <DropdownItem onClick={handleDropdownClick} value={'ae'}>United Arab Emirates</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'au'}>Australia</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'ca'}>Canada</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'cn'}>Chinac</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'de'}>Germany</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'fr'}>France</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'gb'}>Great Britain</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'hk'}>Hong Kong</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'in'}>India</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'il'}>Israel</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'jp'}>Japan</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'mx'}>Mexico</DropdownItem>
+                  <DropdownItem onClick={handleDropdownClick} value={'us'}>United States</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
           </Col>
         </Row>
         <Row>
           <Wrapper>
-          {articles.map((article, index) =>
-            <Card key={index} article={article} />)}
+            {articles.map((article, index) =>
+              <Card key={index} article={article} />)}
           </Wrapper>
         </Row>
       </Container>
