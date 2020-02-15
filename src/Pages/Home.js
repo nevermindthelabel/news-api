@@ -6,7 +6,7 @@ import Cards from '../components/Card';
 import Wrapper from '../components/Wrapper';
 import Image from '../images/heroimage.jpg'
 import axios from 'axios';
-import API from '../util';
+import { API } from '../util';
 
 const Home = () => {
   const [articles, setArticles] = useState([]);
@@ -28,10 +28,10 @@ const Home = () => {
         </Row>
         <Row>
           <Wrapper>
-          {!isLoaded ? <Spinner /> : articles.map((article, index) => (
-          <Cards key={index} article={article} />
-        ))
-        }
+            {!isLoaded ? <Spinner /> : articles.map((article, index) => (
+              <Cards key={index} article={article} />
+            ))
+            }
           </Wrapper>
         </Row>
       </Container>
