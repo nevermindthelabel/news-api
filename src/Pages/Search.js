@@ -3,7 +3,7 @@ import { Container, Row, Col, Dropdown, DropdownToggle, DropdownMenu, DropdownIt
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobeAmericas } from '@fortawesome/free-solid-svg-icons';
 import Form from '../components/Form';
-import API from '../util';
+import { API, countriesToSearchFrom } from '../util';
 import axios from 'axios';
 import Card from '../components/Card';
 import HeroImage from '../components/HeroImage';
@@ -32,8 +32,6 @@ const Search = () => {
   const handleDropdownClick = e => {
     setDropdownValue(e.target.value)
   }
-
-  const countriesToSearchFrom = ['United Arab Emirates', 'Australia', 'Canada', 'China', 'China', 'Germany', 'France', 'Great Britain', 'Hong Kong', 'India', 'Israel', 'Japan', 'Mexico', 'United States'];
 
   return (
     <>
